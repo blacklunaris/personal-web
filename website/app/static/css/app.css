@@ -1,6 +1,10 @@
+
 body {
     padding-top: 5rem;
-    background-image: url(lelouch.jpg);
+    background-attachment: fixed;
+    background-image: url(cyberpunk1.jpg);
+    color:white;
+    
 }
 .container{ 
     display: flex;
@@ -8,10 +12,11 @@ body {
 }
 
 .name{
+    font-family: 'Sriracha', cursive;
     letter-spacing: 2px;
-    font-size: 100px;
+    font-size: 80px;
     color:black;
-    text-shadow: 2px 2px 2px #cccccc;
+    text-shadow: 2px 2px 2px white;
     text-align: center;
    
 }
@@ -21,7 +26,7 @@ ul{
     list-style: none;
     margin: 0;
     padding: 0;
-    background-color: gray;
+    background-color: rgba(0,0,0,.5);
     overflow: hidden;
 
 }
@@ -40,6 +45,56 @@ li a:hover{
 background-color:#555;
 color: #cccccc;
 }
+.foot {
+    display: flex;
+    color: white;
+}
+input[type=text],select,textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 1px solid black;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+
+}
+label{
+    padding: 12xp 12px 12px 0;
+    display: inline-block;
+    color: white;
+}
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+  .col-25 {
+    
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+.form-btn{
+    padding: 20px;
+}
 @media screen and (max-width:800px){
     container{
         float: none;
@@ -52,3 +107,4 @@ color: #cccccc;
 
     }
 }
+

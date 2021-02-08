@@ -4,15 +4,37 @@
 {% block main %}
     <form method="POST" action ="/">
         {{form.csrf_token}}
-        {{form.name.label}}
-        {{form.name(size=20)}}
-        {{form.email.label}}
-        {{form.email(size=20)}}
-        {{form.subject.label}}
-        {{form.subject(size=20)}}
-        {{form.message.label}}
-        {{form.message(size=20)}}
-        <button type="submit">Send</button>
+        <div class="col-25">
+            {{form.name.label}}
+        </div>
+        <div class="col-75">
+            {{form.name(size=20)}}
+        </div>
+        <div class="col-25">
+            {{form.email.label}}
+        </div>
+        <div class="col-75">
+            {{form.email(size=20)}}
+        </div>
+        <div class="col-25">
+            {{form.subject.label}}
+        </div>
+        
+        <div class="col-75">
+            {{form.subject(size=20)}}
+        </div>
+        <div class="col-25">
+            {{form.message.label}}
+        </div>   
+        <div class="col-75">
+            {{form.message(size=20)}}
+        </div>     
+        
+      
+        <div class="form-btn">
+            <button type="submit">Send</button>
+        </div>
+        
     </form>
 {% endblock %}
 

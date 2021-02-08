@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../vue_work"
+		},
+		{
+			"path": "../../../../research"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "personal web"
+	}
+}

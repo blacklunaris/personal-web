@@ -9,7 +9,9 @@ from flask import Flask
 from flask import render_template, request, redirect, url_for, flash
 from app import mail
 from flask_mail import Message 
-
+from flask_wtf import FlaskForm
+from wtforms import StringField,Form,TextField,TextAreaField, validators,SubmitField
+from wtforms.validators import InputRequired
 
 ###
 # Routing for your application.
@@ -27,23 +29,27 @@ def projects():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Sports Center Management System")
-
-@app.route('/contact',methods=('GET','POST'))
-def contact():
-    form=ContactForm()
-    if form.validate_on_submit():
-        sender=(request.form['name'],request.email['email'])
-        subject=request.form['subject']
-        msg=Message(subject,sender,recipients=["to@example.com"])
+    return render_template('about.html', name="Personal Projects")
+class contactForm(Form):
+    name=StringField('name',validators=[InputRequired()])
+    email=StringField('email',validators=[InputRequired()])
+    subject=StringField('subject',validators=[InputRequired()])
+    message=StringField('message',validators=[InputRequired()])
+    @app.route('/contact',methods=('GET','POST'))
+    def contact():
+        form=contactForm(request.form)
+        if request.method=='POST':
+            sender=(request.form['name'],request.email['email'])
+            subject=request.form['subject']
+            msg=Message(subject,sender,recipients=["to@example.com"])
         
-        msg.body=request.form['message']
+            msg.body=request.form['message']
     
-        mail.send(msg)
-        flash('Your email was sent successfully')
-        return redirect(url_for('/'))
+            mail.send(msg)
+            flash('Your email was sent successfully')
+            return redirect(url_for('/'))
         
-    return render_template("contact.html",form=form)
+        return render_template('contact.html',form=form)
     
 ###
 # The functions below should be applicable to all Flask apps.
