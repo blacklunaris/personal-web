@@ -1,16 +1,13 @@
 {
-	"folders": [
-		{
-			"path": "../../../../vue_work"
-		},
-		{
-			"path": "../../../../research"
-		},
-		{
-			"path": "../../.."
-		}
-	],
-	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "personal web"
-	}
+    "folders": [
+        {
+            "path": "../../.."
+        },
+        {
+            "path": "../../../../vue_work/capstone"
+        },
+        {
+            "path": "../../../../../vue-calendar"
+        }
+    ]
 }
